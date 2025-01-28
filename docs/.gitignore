@@ -12,6 +12,8 @@
 *.o
 *.so
 
+cur_anthropic.py
+
 # Packages #
 ############
 *.7z
