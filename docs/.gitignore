@@ -1,0 +1,88 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# IDE-specific files #
+######################
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python #
+##########
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# C/C++ #
+##########
+*.a
+*.out
+*.app
+*.dylib
+
+# Project-specific ignores #
+############################
+# Ignore any local configuration or secret files
+*.local
+*.secret
+config.ini
+
+# Temporary files #
+###################
+*.tmp
+*.bak
+.temp/
+
+# Backup files #
+################
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
