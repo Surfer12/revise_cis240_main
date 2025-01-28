@@ -1,0 +1,56 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        if [ -f "requirements.txt" ]; then
+          pip install -r requirements.txt
+        fi
+
+    - name: Run tests
+      run: |
+        # Add your test command here
+        pytest
+
+    - name: Package application
+      run: |
+        # Add packaging steps here
+        echo "Packaging application..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Server
+      env:
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      run: |
+        # Add deployment steps here
+        echo "Deploying application to $SERVER_IP..."
+        # Example: scp or rsync to transfer files
+        # ssh -i $DEPLOY_KEY user@$SERVER_IP 'commands to restart service'
